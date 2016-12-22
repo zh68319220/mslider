@@ -1,0 +1,165 @@
+/*
+  reset styles for mobile devices.
+*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font-size: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  vertical-align: baseline;
+  font-size: 100%;
+  text-decoration: none;
+}
+
+*{padding: 0;margin: 0;}
+
+html,
+body {
+  width: 640px;
+  position: relative;
+  // transform: translate3d(0, 0, 0); 这个属性影响fixed
+  font-family: '微软雅黑';
+}
+
+.clearfix {
+  display: block;
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  font-size: 0;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* ==========mixins========== */
+@mixin getRect( $w, $h ){
+	@if ($w != 0){
+		width: $w+px;
+	}
+	@if ($h != 0){
+		height: $h+px;
+	}
+}
+
+@mixin getPos( $left, $top ){
+	position: absolute;
+	@if ($left != 0){
+		left: $left+px;
+	}
+	@else{
+		left: 0;
+	}
+	@if ($top != 0){
+		top: $top+px;
+	}
+	@else{
+		top: 0;
+	}
+}
+
+@mixin getSinglePic( $url ){
+	background: url( $url ) center center no-repeat;
+	background-size: cover;
+}

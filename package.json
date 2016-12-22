@@ -1,0 +1,47 @@
+{
+  "name": "mslider",
+  "version": "1.0.0",
+  "description": "touch slide for mobile devices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "webpack --config ./webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zh68319220/mslider.git"
+  },
+  "keywords": [
+    "touch",
+    "slide"
+  ],
+  "author": "yf",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zh68319220/mslider/issues"
+  },
+  "homepage": "https://github.com/zh68319220/mslider#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.1",
+    "node-sass": "^3.13.1",
+    "open": "0.0.5",
+    "postcss-loader": "^0.13.0",
+    "postcss-px2rem": "^0.3.0",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "html-withimg-loader": "^0.1.16"
+  }
+}

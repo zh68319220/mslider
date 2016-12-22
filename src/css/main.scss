@@ -1,0 +1,74 @@
+@import 'normal';
+/*
+  index page's styles
+	px will be translate to rem
+*/
+body{ background: #000; }
+.contentb{
+	position: relative;
+	width: 640px;
+	height: 500px;
+	font-size: 14px;
+}
+.contenta{
+	position: relative;
+	width: 640px;
+	height: 500px;
+	font-size: 14px;
+}
+
+.mslide{
+	position: relative;
+	overflow: hidden;
+	ul:nth-child(1){
+		overflow: auto;
+		will-change: transform;
+		li{
+			width: 580px;
+			float: left;
+			padding: 0 30px;
+			a{
+				position: relative;
+				margin-bottom: 20px;
+				float: left;
+				display: block;
+				width: 280px;
+				height: 412px;
+				img{ width: 100%;height: 100%; }
+				.ta_name{
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: 40px;
+					line-height: 40px;
+					width: 280px;
+					background: rgba(0,0,0,0.6);
+					text-align: center;
+					color: #fff;
+					font-size: 24px;
+					font-weight: bold;
+				}
+			}
+			a:nth-child(2n){
+				margin-left: 18px;
+			}
+		}
+	}
+	ul:nth-child(2){
+		margin: 0 auto;
+		height: 16px;
+		padding: 20px 0 20px 250px;
+		li{
+			margin-right: 20px;
+			padding: 0;
+			float: left;
+			width: 16px;
+			height: 16px;
+			border-radius: 50%;
+			background: #ffa300;
+		}
+		.mslide_ac{
+			background: #fff;
+		}
+	}
+}

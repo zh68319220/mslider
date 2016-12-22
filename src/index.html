@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0", user-scalable=no,minimal-ui>
+  <meta content="yes" name="apple-mobile-web-app-capable" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta content="telephone=no,email=no" name="format-detection" />
+
+  <script type="text/javascript">
+  /*
+  adapt different mobile devices using rem.
+  */
+  (function(win) {
+    var doc = win.document,
+        docEl = doc.documentElement,
+        screenWidth =  parseInt(docEl.clientWidth),
+        tid;
+    var phoneScale = screenWidth/640;
+    var ua = navigator.userAgent;
+    if (/Android (\d+\.\d+)/.test(ua)){
+        var version = parseFloat(RegExp.$1);
+        if(version>2.3){
+            document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+'">');
+        }else{
+            document.write('<meta name="viewport" content="width=640">');
+        }
+    } else {
+        document.write('<meta name="viewport" content="width=device-width, user-scalable=no">');
+    };
+
+    function refreshRem() {
+        screenWidth =  parseInt(docEl.clientWidth);
+        if (screenWidth > 640) { // 最大宽度
+            screenWidth = 640;
+        }
+        var rem = screenWidth / 10; // 将屏幕宽度分成10份， 1份为1rem
+        docEl.style.fontSize = rem + 'px';
+        win.rootFont = rem;
+    }
+    win.addEventListener('resize', function() {
+        clearTimeout(tid);
+        tid = setTimeout(refreshRem, 300);
+    }, false);
+    win.addEventListener('pageshow', function(e) {
+        if (e.persisted) {
+            clearTimeout(tid);
+            tid = setTimeout(refreshRem, 300);
+        }
+    }, false);
+    refreshRem();
+  })(window);
+  </script>
+</head>
+<body>
+<div class="contentb"></div>
+<div class="mslide">
+  <ul>
+    <li>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+    </li>
+    <li>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+    </li>
+    <li>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+    </li>
+    <li>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
+    </li>
+  </ul>
+  <ul>
+    <li class="mslide_ac"></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+<div class="contenta"></div>
+<script type="text/javascript">
+// (function () {
+//   // 红毯滑动墙
+//   var _tanul = document.querySelector('.ta_slide').getElementsByTagName('ul')[0],
+//   _tannav = document.querySelector('.ta_slide_c').getElementsByTagName('li'),
+//   _body = document.body,
+//   _liWidth = document.documentElement.clientWidth,
+//   _liTotal = _tanul.getElementsByTagName('li').length;
+//   _tanul.style.width = _liTotal + '00%';
+
+//   function setTransform(selector, content){
+//     selector.style.transform = content;
+//     selector.style.webkitTransform = content;
+//   }
+//   function setTransition(selector, content){
+//     selector.style.transition = content;
+//     selector.style.webkitTransition = content;
+//   }
+//   function clearTransition(selector){
+//     selector.style.transition = '';
+//     selector.style.webkitTransition = '';
+//   }
+//   function getPxFromStyle(_tanul){
+//     return isNaN(parseInt(_tanul.style.transform.split('(')[1])) 
+//             ? parseInt(_tanul.style.transform.split('(')[1]) : 
+//             parseInt(_tanul.style.webkitTransform.split('(')[1]);
+//   }
+
+//   _tanul.addEventListener('touchstart', function(e){
+//     // _body.ontouchstart = function(e) { e.preventDefault(); }
+//     clearTransition(_tanul);
+//     _tanul.startX = e.touches[0].pageX;
+//     _tanul.sstartX = e.touches[0].pageX;
+//     _tanul.mmoveX = e.touches[0].pageX;
+
+//     _tanul.startY = e.touches[0].pageY;
+//   }, false);
+//   _tanul.addEventListener('touchmove', function(e){
+//     // 判断横竖滑动，确定是否禁用页面默认滚动
+//     // var _dy = e.touches[0].pageY - _tanul >= 0 ? (e.touches[0].pageY - _tanul) : (_tanul.startY - e.touches[0].pageY),
+//     //     _dx = e.touches[0].pageX - _tanul.sstartX >= 0 ? (e.touches[0].pageX - _tanul.sstartX) : (_tanul.sstartX - e.touches[0].pageX);
+//     //     _tanul.startY = e.touches[0].pageY;
+//     // if( _dy >= _dx ){ _body.ontouchstart = function(e) { return; } }
+//     //   else{ _body.ontouchstart = function(e) { e.preventDefault(); } }
+
+//     var crtX = getPxFromStyle(_tanul);
+//     setTransform(_tanul, 'translateX(' + (e.touches[0].pageX - _tanul.sstartX + crtX) + 'px)');
+//     _tanul.sstartX = e.touches[0].pageX;
+//     _tanul.mmoveX = e.touches[0].pageX;
+//   }, false);
+//   _tanul.addEventListener('touchend', function(e){
+//     var crtX = getPxFromStyle(_tanul);
+//     setTransition(_tanul, 'all ease-out .3s');
+//     if(crtX >= 0){
+//       setTransform(_tanul, 'translateX(0px)');
+//     }else{
+//       var pos1 = parseInt( -crtX / _liWidth ),
+//       pos2 = -crtX % _liWidth;
+//       if(pos2 >= (_liWidth/4) && pos1 < _liTotal - 1){
+//         if(_tanul.startX <= _tanul.mmoveX){
+//         }else{
+//           pos1 += 1;
+//         }
+//       }
+//       // 设置导航点
+//       for (var i = 0; i <= _tannav.length-1; i++) {
+//         _tannav[i].className = '';
+//       }
+//       _tannav[pos1].className = 'ta_slide_c_ac';
+//       // 设置吸附位置
+//       setTransform(_tanul, 'translateX(-'+pos1*_liWidth+'px)');
+//     }
+//   }, false);
+//   _tanul.addEventListener('webkitTransitionEnd', function(e){
+//     clearTransition(_tanul);
+//   });
+//   _tanul.addEventListener('transitionend', function(e){
+//     clearTransition(_tanul);
+//   });
+// })();
+</script>
+</html>

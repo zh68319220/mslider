@@ -1,2 +1,7 @@
 # mslider
-移动端滑动插件
+Mobile end smooth Slider assembly
+## development
+```javascript
+npm install
+npm run dev
+```
