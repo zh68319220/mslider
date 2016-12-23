@@ -13,7 +13,7 @@ module.exports = {
   output: {
     publicPath: './build',
     filename: 'bundle.js',
-    path: path.resolve(__dirname, './build')
+    path: path.resolve(__dirname, './demo')
   },
 
   resolve: {
@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.(gif|jpg|png)\??.*$/,
-        loader: 'url-loader?limit=81920' // inline base64 URLs for <=80k images, direct URLs for the rest
+        loader: 'url-loader?limit=8192' // inline base64 URLs for <=8k images, direct URLs for the rest
       },
       {
         test: /\.(woff|svg|eot|ttf)$/,
@@ -66,7 +66,8 @@ module.exports = {
       }
     }),
     new CopyWebpackPlugin([
-      { from: './src/index.html', to: 'index.html' }
+      { from: './src/index.html', to: 'index.html' },
+      { from: './src/imgs', to: 'imgs' }
     ])
   ]
 }
