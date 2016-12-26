@@ -1,17 +1,12 @@
 # mslider
 Mobile end smooth Slider assembly
 
-## start
+## install
 ```javascript
 npm install
 ```
 
 ## development
 ```javascript
-npm run dev
-```
-
-## production
-```javascript
-npm run build
+gulp browser-sync
 ```
