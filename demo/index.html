@@ -52,17 +52,12 @@
     refreshRem();
   })(window);
   </script>
+  <link rel="stylesheet" type="text/css" href="mslider.css">
 </head>
 <body>
 <div class="contentb"></div>
 <div class="mslide">
   <ul>
-    <li>
-      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
-      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
-      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
-      <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
-    </li>
     <li>
       <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
       <a href="#"><img src="imgs/p.jpg" alt=""><span class="ta_name">李冰冰</span></a>
@@ -93,9 +88,11 @@
     <li></li>
     <li></li>
     <li></li>
-    <li></li>
   </ul>
 </div>
 <div class="contenta"></div>
-<script type="text/javascript" src="bundle.js"></script>
+<script type="text/javascript" src="mslider.js"></script>
+<script type="text/javascript">
+  var ms = new Mslider('.mslide', '640px', '900px');
+</script>
 </html>

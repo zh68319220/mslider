@@ -111,6 +111,37 @@ a {
 
 *{padding: 0;margin: 0;}
 
+/* ==========mixins========== */
+@mixin getRect( $w, $h ){
+  @if ($w != 0){
+    width: $w+px;
+  }
+  @if ($h != 0){
+    height: $h+px;
+  }
+}
+
+@mixin getPos( $left, $top ){
+  position: absolute;
+  @if ($left != 0){
+    left: $left+px;
+  }
+  @else{
+    left: 0;
+  }
+  @if ($top != 0){
+    top: $top+px;
+  }
+  @else{
+    top: 0;
+  }
+}
+
+@mixin getSinglePic( $url ){
+  background: url( $url ) center center no-repeat;
+  background-size: cover;
+}
+
 html,
 body {
   width: 640px;
@@ -131,35 +162,4 @@ body {
   height: 0;
   clear: both;
   visibility: hidden;
-}
-
-/* ==========mixins========== */
-@mixin getRect( $w, $h ){
-	@if ($w != 0){
-		width: $w+px;
-	}
-	@if ($h != 0){
-		height: $h+px;
-	}
-}
-
-@mixin getPos( $left, $top ){
-	position: absolute;
-	@if ($left != 0){
-		left: $left+px;
-	}
-	@else{
-		left: 0;
-	}
-	@if ($top != 0){
-		top: $top+px;
-	}
-	@else{
-		top: 0;
-	}
-}
-
-@mixin getSinglePic( $url ){
-	background: url( $url ) center center no-repeat;
-	background-size: cover;
 }

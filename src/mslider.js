@@ -1,6 +1,5 @@
-import '../css/main.scss';
-
 const width = 640; //设计稿尺寸
+
 let Tool = {
   px2em: function(px){
     return px*10/width;
@@ -131,4 +130,4 @@ class Mslider {
   }
 }
 
-let ms = new Mslider('.mslide', '640px', '900px');
+window.Mslider = Mslider;
